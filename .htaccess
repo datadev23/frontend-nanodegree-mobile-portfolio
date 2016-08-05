@@ -1,0 +1,45 @@
+#
+# Apache settings:
+# http://stackoverflow.com/questions/8513791/htaccess-caching-not-working
+#
+
+# Browser Caching
+
+FileETag MTime Size
+
+<IfModule expires_module>
+    ExpiresActive on
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType text/js "access plus 1 week"
+    ExpiresByType image/jpg "access plus 1 week"
+
+</IfModule>
+
+# Cache-Control Headers
+<ifModule mod_headers.c>
+#month
+  <filesMatch "\.(jpe?g|gif)$">
+    Header set Cache-Control "max-age=2592000, public"
+  </filesMatch>
+#week
+  <filesMatch "\.(css|js)$">
+    Header set Cache-Control "max-age=604800, public"
+  </filesMatch>
+#day
+  <filesMatch "\.(x?html?|php)$">
+    Header set Cache-Control "max-age=43200, private, must-revalidate"
+  </filesMatch>
+</ifModule>
+# END Cache-Control Headers
+ 
+# Turn ETags Off
+<ifModule mod_headers.c>
+  Header unset ETag
+</ifModule>
+FileETag None
+ 
+# Remove Last-Modified Header
+<ifModule mod_headers.c>
+  Header unset Last-Modified
+</ifModule>
+
