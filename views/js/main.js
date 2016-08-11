@@ -512,6 +512,10 @@ function updatePositions() {
     console.log("number of columns" + numCols);
     console.log("number of columns" + numRows);
 
+    var numPizzas = numCols * numRows;
+
+    console.log("number of pizzas" + numPizzas);
+
   console.log("calculate number of frames" + frame);
   window.performance.mark("mark_start_frame");
   var scrolltop = document.body.scrollTop / 1250;
