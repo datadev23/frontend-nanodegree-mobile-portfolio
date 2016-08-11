@@ -515,14 +515,20 @@ function updatePositions() {
     var numPizzas = numCols * numRows;
 
     console.log("number of pizzas" + numPizzas);
-
+var phase = [];
   console.log("calculate number of frames" + frame);
   window.performance.mark("mark_start_frame");
   var scrolltop = document.body.scrollTop / 1250;
+  Math.sin((scrolltop) + (i % 5));
   var items = document.querySelectorAll('.mover');
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((scrolltop) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+   phase.push(Math.sin((scrolltop) + (i % 5)));
+    
+  }
+
+  for (var i = 0; i < items.length; i++) {
+   items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
