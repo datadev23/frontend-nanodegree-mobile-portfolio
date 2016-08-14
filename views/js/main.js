@@ -18,8 +18,8 @@ cameron *at* udacity *dot* com
 
 // As you may have realized, this website randomly generates pizzas.
 // Here are arrays of all possible pizza ingredients.
+ var scrolltop = document.body.scrollTop / 1250;
 var pizzaIngredients = {};
-  var scrolltop = document.body.scrollTop / 1250;
 pizzaIngredients.meats = [
   "Pepperoni",
   "Sausage",
@@ -499,6 +499,7 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 
 // Moves the sliding background pizzas based on scroll position
 
+
 pizzaHeight = 100;
     pizzaWidth = 73.333;
     console.log(screen.width);
@@ -520,15 +521,21 @@ function updatePositions() {
     
 
     console.log("number of pizzas" + numPizzas);
-
+var phase = [];
   console.log("calculate number of frames" + frame);
   window.performance.mark("mark_start_frame");
 
+
   var items = document.querySelectorAll('.mover');
+
+ // Math.sin((scrolltop) + (i % 5));
+ 
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((scrolltop) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
+
+
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
@@ -545,10 +552,12 @@ window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
+   var items = document.querySelectorAll('.mover');
   var cols = 8;
   var s = 256;
   console.log("scrolling active");
   for (var i = 0; i < 35; i++) {
+
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
