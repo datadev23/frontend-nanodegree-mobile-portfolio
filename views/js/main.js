@@ -513,7 +513,7 @@ pizzaHeight = 100;
     console.log("number of columns" + numCols);
     console.log("number of columns" + numRows);
 
-    var numPizzas = numCols * numRows;
+    var numPizzas = Math.floor(numCols * numRows);
 
 
 
