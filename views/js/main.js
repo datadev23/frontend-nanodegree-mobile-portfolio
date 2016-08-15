@@ -18,7 +18,7 @@ cameron *at* udacity *dot* com
 
 // As you may have realized, this website randomly generates pizzas.
 // Here are arrays of all possible pizza ingredients.
- var scrolltop = document.body.scrollTop / 1250;
+ var phaseHolder = document.body.scrollTop / 1250;
 var pizzaIngredients = {};
 pizzaIngredients.meats = [
   "Pepperoni",
@@ -520,13 +520,17 @@ pizzaHeight = 100;
 function updatePositions() {
   frame++;
     console.log("number of pizzas" + numPizzas);
-var phase = [];
+var pizzaStorage = [];
   console.log("calculate number of frames" + frame);
   window.performance.mark("mark_start_frame");
   var items = document.querySelectorAll('.mover');
 
-  for (var i = 0; i < items.length; i++) {
-   items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+
+
+  for (var i = 0; i < numPizzas; i++) {
+        var phase = Math.sin((phaseHolder) + (i % 5));
+    pizzaStorage.push(phase);
+   items[i].style.left = items[i].basicLeft + 100 * pizzaStorage[i] + 'px';
 
   }
 
