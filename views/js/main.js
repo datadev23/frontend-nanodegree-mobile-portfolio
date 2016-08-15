@@ -18,7 +18,7 @@ cameron *at* udacity *dot* com
 
 // As you may have realized, this website randomly generates pizzas.
 // Here are arrays of all possible pizza ingredients.
- var phaseHolder = document.body.scrollTop / 1250;
+
 var pizzaIngredients = {};
 pizzaIngredients.meats = [
   "Pepperoni",
@@ -407,13 +407,13 @@ var resizePizzas = function(size) {
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
-        document.querySelector("#pizzaSize").innerHTML = "Small";
+        document.getElementById("#pizzaSize").innerHTML = "Small";
         return;
       case "2":
-        document.querySelector("#pizzaSize").innerHTML = "Medium";
+        document.getElementById("#pizzaSize").innerHTML = "Medium";
         return;
       case "3":
-        document.querySelector("#pizzaSize").innerHTML = "Large";
+        document.getElementById("#pizzaSize").innerHTML = "Large";
         return;
       default:
         console.log("bug in changeSliderLabel");
@@ -519,6 +519,7 @@ pizzaHeight = 100;
 
 function updatePositions() {
   frame++;
+   var phaseHolder = document.body.scrollTop / 1250;
     console.log("number of pizzas" + numPizzas);
 var pizzaStorage = [];
   console.log("calculate number of frames" + frame);
@@ -567,7 +568,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "80.0px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    document.getElementById("#movingPizzas1").appendChild(elem);
   }
   updatePositions();
 });
