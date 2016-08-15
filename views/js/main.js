@@ -567,7 +567,8 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "80.0px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    
   }
   updatePositions();
+  document.querySelector("#movingPizzas1").appendChild(elem);
 });
