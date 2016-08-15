@@ -513,7 +513,7 @@ pizzaHeight = 100;
     console.log("number of columns" + numCols);
     console.log("number of columns" + numRows);
 
-    var numPizzas = Math.floor(numCols * numRows);
+    var numPizzas = numCols * numRows;
 
 
 
@@ -567,8 +567,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "80.0px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    
+    document.querySelector("#movingPizzas1").appendChild(elem);
   }
   updatePositions();
-  document.querySelector("#movingPizzas1").appendChild(elem);
 });
