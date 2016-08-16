@@ -50,6 +50,9 @@ You might find the FPS Counter/HUD Display useful in Chrome developer tools desc
 Move all constants out of the for loop in the updatefunction.
 Move math.Sin out of for loop due to it being recalcuated 
 Set number of pizzas in document.addEventListener to  36.
+Changes the value for the size of the pizza above the slider
+document.getElementById optomisation made
+function changeSliderLabel(size)
 
 ### Optimization Tips and Tricks
 * [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
