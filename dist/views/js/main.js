@@ -451,8 +451,9 @@ var resizePizzas = function(size) {
   }
   // optimisation array length operator will not be accessed after each loop iteration.
   var container = document.querySelectorAll(".randomPizzaContainer").length;
-  var PizzaLength = document.getElementsByClassName("randomPizzaContainer");
+  var PizzaLength = document.querySelectorAll(".randomPizzaContainer");
   var dx = determineDx(PizzaLength[0], size);
+     var newwidth = (PizzaLength[0].offsetWidth + dx) + 'px';
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
     var i = 0;
@@ -460,7 +461,7 @@ var resizePizzas = function(size) {
       // web API call is faster. 
       // References https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName
       
-      var newwidth = (PizzaLength[i].offsetWidth + dx) + 'px';
+   
       PizzaLength[i].style.width = newwidth;
     }
   }
