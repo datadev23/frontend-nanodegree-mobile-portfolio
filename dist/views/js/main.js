@@ -450,17 +450,18 @@ var resizePizzas = function(size) {
     return dx;
   }
   // optimisation array length operator will not be accessed after each loop iteration.
-  var pizzaContainerHolder = document.getElementsByClassName(".randomPizzaContainer").length;
-
+  var container = document.querySelectorAll(".randomPizzaContainer").length;
+  var PizzaLength = document.getElementsByClassName("randomPizzaContainer");
+  var dx = determineDx(PizzaLength[0], size);
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
     var i = 0;
-    for (; i < pizzaContainerHolder; i++) {
+    for (; i < container; i++) {
       // web API call is faster. 
       // References https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName
-      var dx = determineDx(pizzaContainerHolder[i], size);
-      var newwidth = (pizzaContainerHolder[i].offsetWidth + dx) + 'px';
-      document.getElementsByClassName("randomPizzaContainer")[i].style.width = newwidth;
+      
+      var newwidth = (PizzaLength[i].offsetWidth + dx) + 'px';
+      PizzaLength[i].style.width = newwidth;
     }
   }
 
@@ -574,7 +575,7 @@ var elem;
 
 
 
-   elem = document.createElement('img');
+    elem = document.createElement('img');
     console.log("count elem iterations" +elem);
     elem.className = 'mover';
     elem.src = "images/pizza.png";
