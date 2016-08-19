@@ -450,15 +450,16 @@ var resizePizzas = function(size) {
     return dx;
   }
   // optimisation array length operator will not be accessed after each loop iteration.
-  var container = document.querySelectorAll(".randomPizzaContainer").length;
+  var pizzaContainerHolder = document.getElementsByClassName(".randomPizzaContainer").length;
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    for (var i = 0; i < container; i++) {
+    var i = 0;
+    for (; i < pizzaContainerHolder; i++) {
       // web API call is faster. 
       // References https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName
-      var dx = determineDx(document.getElementsByClassName("randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
+      var dx = determineDx(pizzaContainerHolder[i], size);
+      var newwidth = (pizzaContainerHolder[i].offsetWidth + dx) + 'px';
       document.getElementsByClassName("randomPizzaContainer")[i].style.width = newwidth;
     }
   }
@@ -568,11 +569,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // put the document element and put it outside the for loop
 // so it can be optomised.
 var movingPizzas = document.getElementById('movingPizzas1');
+var elem;
   for (var i = 0; i < numPizzas; i++) {
 
 
 
-    var elem = document.createElement('img');
+   elem = document.createElement('img');
     console.log("count elem iterations" +elem);
     elem.className = 'mover';
     elem.src = "images/pizza.png";
