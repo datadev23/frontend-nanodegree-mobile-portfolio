@@ -530,8 +530,7 @@ var   pizzaWidth = 73.333;
 function updatePositions() {
   frame++;
   // update movement of pizzas
-  
-    console.log("number of pizzas" + numPizzas);
+
 var pizzaStorage = [];
   console.log("calculate number of frames" + frame);
   window.performance.mark("mark_start_frame");
