@@ -450,8 +450,8 @@ var resizePizzas = function(size) {
     return dx;
   }
   // optimisation array length operator will not be accessed after each loop iteration.
-  var container = document.querySelectorAll(".randomPizzaContainer").length;
-  var PizzaLength = document.querySelectorAll(".randomPizzaContainer");
+  var container = document.getElementsByClassName("randomPizzaContainer").length;
+  var PizzaLength = document.getElementsByClassName("randomPizzaContainer");
   var dx = determineDx(PizzaLength[0], size);
      var newwidth = (PizzaLength[0].offsetWidth + dx) + 'px';
   // Iterates through pizza elements on the page and changes their widths
