@@ -404,7 +404,7 @@ var resizePizzas = function(size) {
   window.performance.mark("mark_start_resize");   // User Timing API function
 
   // Changes the value for the size of the pizza above the slider
-  //  document.getElementById optomisation made
+  //  document.getElementById optomisation made Web API call is faster.
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
@@ -450,6 +450,8 @@ var resizePizzas = function(size) {
     return dx;
   }
   // optimisation array length operator will not be accessed after each loop iteration.
+  // web API call is faster. 
+  // References https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName
   var container = document.getElementsByClassName("randomPizzaContainer").length;
   var PizzaLength = document.getElementsByClassName("randomPizzaContainer");
   var dx = determineDx(PizzaLength[0], size);
@@ -458,8 +460,7 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
     var i = 0;
     for (; i < container; i++) {
-      // web API call is faster. 
-      // References https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName
+     
       
    
       PizzaLength[i].style.width = newwidth;
@@ -534,6 +535,7 @@ function updatePositions() {
 var pizzaStorage = [];
   console.log("calculate number of frames" + frame);
   window.performance.mark("mark_start_frame");
+  // web api getElementsByClassName is faster
   var items = document.getElementsByClassName('mover');
 
  var phaseHolder = document.body.scrollTop / 1250;
@@ -567,14 +569,12 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   console.log("scrolling active");
-// put the document element and put it outside the for loop
-// so it can be optomised.
+// The document.getElementById() Web API call is faster
 var movingPizzas = document.getElementById('movingPizzas1');
 var elem;
+// Declaring the elem variable (var elem;) in the initialisation of the 
+// for-loop will prevent it from being created every time the loop is executed
   for (var i = 0; i < numPizzas; i++) {
-
-
-
     elem = document.createElement('img');
     console.log("count elem iterations" +elem);
     elem.className = 'mover';

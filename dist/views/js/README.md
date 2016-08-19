@@ -37,6 +37,8 @@ reduce the size of profile images
 change size of pizza image
 Make google analytics async
 Minify Html
+optomise images for pizza.png and 
+
 
 
 
@@ -47,13 +49,21 @@ To optimize views/pizza.html, you will need to modify views/js/main.js until you
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
 
-Move all constants out of the for loop in the updatefunction.
-Move math.Sin out of for loop due to it being recalcuated 
-Set number of pizzas in document.addEventListener to  36.
-Changes the value for the size of the pizza above the slider
-document.getElementById optomisation made
-function changeSliderLabel(size)
-optimisation array length operator will not be accessed after each loop iteration.
+* Move all constants out of the for loop in the updatefunction.
+* Move math.Sin out of for loop due to it being recalcuated 
+* Set number of pizzas in document.addEventListener to  36.
+* Changes the value for the size of the pizza above the slider
+* document.getElementById optomisation made
+* function changeSliderLabel(size)
+* document.getElementsByClassName('randomPizzaContainer') outside the loop (e.g. var container = document.
+* getElementsByClassName('randomPizzaContainer')), so the DOM is not explicitly touched in every iteration!
+* optimisation array length operator will not be accessed after each loop iteration.
+* transform: translateZ(0) activates the gpu
+* pizzasDiv variable outside the loop, so only DOM call is made
+* web api getElementsByClassName is faster for accessing mover class
+* Declaring the phase variable (var phase;) in the initialisation of the for loop will prevent it from being created every time the loop is executed.
+* Declaring the elem variable (var elem;) in the initialisation of the for-loop will prevent it from being created every time the loop is executed
+* The document.getElementById() Web API call is faster for movingPizzas1
 
 ### Optimization Tips and Tricks
 * [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
