@@ -512,8 +512,8 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 
 
 
-var pizzaHeight = 100;
-var   pizzaWidth = 73.333;
+    var pizzaHeight = 100;
+    var pizzaWidth = 73.333;
     console.log(screen.width);
     console.log(screen.height);
     // calculates the number of pizzas per columns
