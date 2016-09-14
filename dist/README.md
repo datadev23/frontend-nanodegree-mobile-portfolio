@@ -32,6 +32,19 @@ Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
 ####Part 2: Optimize Frames per Second in pizza.html
 
+To use the application you need to load the index file located in views/js/index.html.
+
+Once the application has been loaded to test the pizza is working correctly you need to go to the location menu item.
+This will take you down to a slider where you can alter the size of the pizza.
+From here you can alter the size of the pizza.
+
+Part A
+
+If you want to see how efficient the processes is. You can look at the the inspect tab. You can get the inspect tab by clicking your menu but on the mouse and chosing the menu item inspect. From here you need to choose timeline There is a red dot click this. This will start record a session now press F5 to reload the page. a chart will be generated. You will be able to see the time frames that have been generated. 
+
+Part B
+If you want to see how efficient the processes is. You can look at the the inspect tab. You can get the inspect tab by clicking your menu but on the mouse and chosing the menu item inspect.  If you choose the console tab and then reload change the size of pizza you can see the speed of it changing. 
+
 To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
