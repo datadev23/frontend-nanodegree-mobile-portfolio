@@ -1,8 +1,8 @@
-The purpose of this project was to generate an optomisation for the portfolio page and optomise a pizza menu site.
+The purpose of this project was to generate an optimization for the portfolio page and optimize the change in a pizza size.
 
 
 
-Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
+Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this on line portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
 To get started, check out the repository and inspect the code.
 
@@ -10,43 +10,66 @@ To get started, check out the repository and inspect the code.
 
 ####Part 1: Optimize PageSpeed Insights score for index.html
 
-Some useful tips to help you get started:
 
 1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
+
+git clone "https://github.com/alexdev23/frontend-nanodegree-mobile-portfolio.git"
+navigate into the 'frontend-nanodegree-mobile-portfolio' directory
+cd c:/frontend-nanodegree-mobile-portfolio
+
+2. Download and install [ngrok](-) to the top-level of your project directory to make your local server accessible remotely.
+
 
   ```bash
   $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8080
+  $> python -m SimpleHTTPServer 8089
   ```
-
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to the top-level of your project directory to make your local server accessible remotely.
 
   ``` bash
   $> cd /path/to/your-project-folder
   $> ./ngrok http 8080
 
-Part One
+Your web address will be similar to this. 
+https://92832de0.ngrok.io -> localhost:80
 
-First you need to clone the repository
+The 92832de0 will be a randomly generated number letter combination. 
 
-add inline css to the index.html file
-Add media query to print.css
-reduce the size of profile images
-change size of pizza image
-Make google analytics async
-Minify Html
-optomise images for pizza.png and 
+Now you need togo too the https://developers.google.com/speed/pagespeed/
+
+Type in your generated eg url https://92832de0.ngrok.io -> localhost:80
+
+Run the test.
+
+You will be asked to apply various fixes. 
+
+Part One Fixes
+
+* add inline css to the index.html file
+* Add media query to print.css
+* reduce the size of profile images
+* change size of pizza image
+* Make google analytics async
+* Minify Html
+* optimise image for pizza.jpeg and 
+* optomise image for pizzeria.jpeg
 
 
 
 
 ####Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
 
-You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
+
+Part A
+
+If you want to see how efficient the processes is for the pizza loading on the page. You can look at the the inspect tab. You can get the inspect tab by clicking your menu button on the mouse and choosing the menu item inspect. The inspection menu will open on the page and then you need to go to the time line tab. From here you need to choose time line There is a red dot to the side of the timeline menu click this. This will start record a session now press F5 to reload the page. Once the page has been reloaded stop the record and a chart will be visible. 
+
+Part B
+To use the application you need to load the index file located in views/js/index.html.
+
+Once the application has been loaded to test the pizza is working correctly you need to go to the location menu item.
+This will take you down to a slider where you can alter the size of the pizza.
+From here you can alter the size of the pizza.
 
 
 * Move all constants out of the for loop in the updatefunction.
@@ -64,25 +87,6 @@ You might find the FPS Counter/HUD Display useful in Chrome developer tools desc
 * Declaring the phase variable (var phase;) in the initialisation of the for loop will prevent it from being created every time the loop is executed.
 * Declaring the elem variable (var elem;) in the initialisation of the for-loop will prevent it from being created every time the loop is executed
 * The document.getElementById() Web API call is faster for movingPizzas1
-
-### Optimization Tips and Tricks
-* [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
-* [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
-* [Optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path.html "optimize the crp!")
-* [Avoiding Rendering Blocking CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css.html "render blocking css")
-* [Optimizing JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript.html "javascript")
-* [Measuring with Navigation Timing](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp.html "nav timing api"). We didn't cover the Navigation Timing API in the first two lessons but it's an incredibly useful tool for automated page profiling. I highly recommend reading.
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/eliminate-downloads.html">The fewer the downloads, the better</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html">Reduce the size of text</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Optimize images</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching</a>
-* <a href="http://jankfree.org/">Jank Free</a>
-
-### Customization with Bootstrap
-The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstrap</a> framework. All custom styles are in `dist/css/portfolio.css` in the portfolio repo.
-
-* <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
-* <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
 
 
 
