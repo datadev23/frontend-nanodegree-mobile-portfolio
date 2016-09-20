@@ -15,7 +15,7 @@ To get started, check out the repository and inspect the code.
 
 git clone "https://github.com/alexdev23/frontend-nanodegree-mobile-portfolio.git"
 navigate into the 'frontend-nanodegree-mobile-portfolio' directory
-cd c:/frontend-nanodegree-mobile-portfolio
+cd c:/frontend-nanodegree-mobile-portfolio/dist
 
 2. Download and install [ngrok](-) to the top-level of your project directory to make your local server accessible remotely.
 
@@ -44,14 +44,14 @@ You will be asked to apply various fixes.
 
 Part One Fixes
 
-* add inline css to the index.html file
+* Add inline css to the index.html file
 * Add media query to print.css
 * reduce the size of profile images
 * change size of pizza image
 * Make google analytics async
 * Minify Html
-* optimise image for pizza.jpeg and 
-* optomise image for pizzeria.jpeg
+* Optimise image for pizza.jpeg and 
+* Optomise image for pizzeria.jpeg
 
 
 
@@ -65,7 +65,7 @@ Part A
 If you want to see how efficient the processes is for the pizza loading on the page. You can look at the the inspect tab. You can get the inspect tab by clicking your menu button on the mouse and choosing the menu item inspect. The inspection menu will open on the page and then you need to go to the time line tab. From here you need to choose time line There is a red dot to the side of the timeline menu click this. This will start record a session now press F5 to reload the page. Once the page has been reloaded stop the record and a chart will be visible. 
 
 Part B
-To use the application you need to load the index file located in views/js/index.html.
+To use the application you need to load the index file located in frontend-nanodegree-mobile-portfolio/dist/views/index.html
 
 Once the application has been loaded to test the pizza is working correctly you need to go to the location menu item.
 This will take you down to a slider where you can alter the size of the pizza.
